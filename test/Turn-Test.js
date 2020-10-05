@@ -2,6 +2,8 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Turn = require('../src/Turn');
+const Card = require('../src/Card');
+
 
 describe('Turn', function() {
 
@@ -15,12 +17,12 @@ describe('Turn', function() {
     expect(turn).to.be.an.instanceof(Turn);
   });
 
-//
-//   it('should store a question', function() {
-//     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-//     expect(card.question).to.equal('What allows you to define a set of related information using key-value pairs?');
-//   });
-//
+  it('should store a guess', function() {
+    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const turn = new Turn('pug', card);
+    expect(turn.guess).to.equal('pug');
+  });
+
 //   it('should store a list of possible answers', function() {
 //     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
 //     expect(card.answers).to.deep.equal(['object', 'array', 'function']);
