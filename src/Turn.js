@@ -18,6 +18,15 @@ class Turn {
         return false;
     };
   }
+  giveFeedback() {
+    switch (this.guess) {
+      case this.card.correctAnswer :
+        return `Your answer of ${this.guess} is correct!`;
+      break;
+      default :
+        return `Your answer of ${this.guess} is incorrect!`;
+    };
+  }
  }
 
 module.exports = Turn;

@@ -46,4 +46,10 @@ describe('Turn', function() {
     const turn = new Turn('array', card);
     expect(turn.evaluateGuess()).to.equal(false);
   });
+
+  it('should be able to give feedback', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const turn = new Turn('array', card);
+    expect(turn.giveFeedback()).to.equal('Your answer of array is incorrect!');
+  });
 });
