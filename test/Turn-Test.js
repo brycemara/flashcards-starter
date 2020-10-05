@@ -9,12 +9,12 @@ describe('Turn', function() {
     const turn = new Turn();
     expect(Turn).to.be.a('function');
   });
-});
 
-//   it('should be an instance of Card', function() {
-//     const card = new Card();
-//     expect(card).to.be.an.instanceof(Card);
-//   });
+  it('should be an instance of Turn', function() {
+    const turn = new Turn();
+    expect(turn).to.be.an.instanceof(Turn);
+  });
+
 //
 //   it('should store a question', function() {
 //     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
@@ -30,4 +30,4 @@ describe('Turn', function() {
 //     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
 //     expect(card.correctAnswer).to.equal('object');
 //   });
-// });
+});
