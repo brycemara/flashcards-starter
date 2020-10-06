@@ -6,8 +6,13 @@ class Round {
     this.incorrectGuesses = [];
   }
   returnCurrentCard() {
-    console.log(this.currentCard)
     return this.currentCard;
+  }
+  takeTurn(turn) {
+    this.turns += 1;
+    this.deck.cards.shift();
+    this.currentCard = this.deck.cards[0];
+    return turn.giveFeedback()
   }
 }
 
