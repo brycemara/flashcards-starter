@@ -13,7 +13,14 @@ class Round {
     let topCard = this.deck[0];
     const turn = new Turn(guess, topCard);
     this.deck.shift();
+    if (!turn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.deck[0].id)
+    }
     return turn.giveFeedback();
+  }
+  calculatePercentCorrect() {
+    let percentCorrect = (this.turns - this.incorrectGuesses.length) / this.turns * 100;
+    return percentCorrect;
   }
 }
 

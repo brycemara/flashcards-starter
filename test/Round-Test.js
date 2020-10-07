@@ -80,4 +80,11 @@ describe('Round', function() {
   expect(test1).to.be.equal('incorrect!');
   expect(test2).to.be.equal('correct!');
   });
+
+  it('should be able to calculate percent correct', function() {
+    let test1 = round.takeTurn(guess1);
+    let test2 = round.takeTurn(guess2);
+
+    expect(round.calculatePercentCorrect()).to.be.equal(50)
+  })
 });
