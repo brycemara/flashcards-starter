@@ -10,15 +10,12 @@ class Round {
     return this.deck[0];
   }
   takeTurn(guess) {
-    if (!this.deck.length) {
-      this.endRound();
-    }
     this.turns += 1;
     let topCard = this.deck[0];
     const turn = new Turn(guess, topCard);
     this.deck.shift();
     if (!turn.evaluateGuess()) {
-      this.incorrectGuesses.push(this.deck[0].id)
+      this.incorrectGuesses.push(topCard.id)
     }
     return turn.giveFeedback();
   }

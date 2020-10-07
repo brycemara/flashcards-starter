@@ -11,23 +11,25 @@ class Turn {
     return this.card;
   }
   evaluateGuess() {
-    switch (this.guess) {
-      case this.card.correctAnswer :
-        return true;
-      break;
-      default :
-        return false;
-    };
+    return (this.guess === this.card.correctAnswer) ? true : false;
+    // switch (this.guess) {
+    //   case this.card.correctAnswer :
+    //     return true;
+    //   break;
+    //   default :
+    //     return false;
+    // };
   }
   giveFeedback() {
-    switch (this.evaluateGuess()) {
-      case true :
-        return `correct!`;
-      break;
-      default :
-        return `incorrect!`;
+    return (this.evaluateGuess()) ? 'correct!' : 'incorrect!';
+    // switch (this.evaluateGuess()) {
+    //   case true :
+    //     return `correct!`;
+    //   break;
+    //   default :
+    //     return `incorrect!`;
     };
   }
- }
+
 
 module.exports = Turn;
