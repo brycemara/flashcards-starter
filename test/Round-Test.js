@@ -86,5 +86,6 @@ describe('Round', function() {
     let test2 = round.takeTurn(guess2);
 
     expect(round.calculatePercentCorrect()).to.be.equal(50)
+    expect(round.endRound()).to.be.equal('**Round over!** You answered 50% of the questions correctly!')
   })
 });
