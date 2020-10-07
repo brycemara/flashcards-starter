@@ -1,18 +1,19 @@
+const Turn = require('./Turn.js');
 class Round {
   constructor(deck) {
-    this.deck = deck;
-    this.currentCard = deck.cards[0];
+    this.deck = deck.cards;
     this.turns = 0;
     this.incorrectGuesses = [];
   }
   returnCurrentCard() {
-    return this.currentCard;
+    return this.deck[0];
   }
-  takeTurn(turn) {
+  takeTurn(guess) {
     this.turns += 1;
-    this.deck.cards.shift();
-    this.currentCard = this.deck.cards[0];
-    return turn.giveFeedback()
+    let topCard = this.deck[0];
+    const turn = new Turn(guess, topCard);
+    this.deck.shift();
+    return turn.giveFeedback();
   }
 }
 

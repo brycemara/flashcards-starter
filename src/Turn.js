@@ -20,12 +20,12 @@ class Turn {
     };
   }
   giveFeedback() {
-    switch (this.guess) {
-      case this.card.correctAnswer :
-        return `Your answer of ${this.guess} is correct!`;
+    switch (this.evaluateGuess()) {
+      case true :
+        return `correct!`;
       break;
       default :
-        return `Your answer of ${this.guess} is incorrect!`;
+        return `incorrect!`;
     };
   }
  }
