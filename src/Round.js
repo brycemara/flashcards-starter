@@ -10,6 +10,9 @@ class Round {
     return this.deck[0];
   }
   takeTurn(guess) {
+    if (!this.deck.length) {
+      this.endRound();
+    }
     this.turns += 1;
     let topCard = this.deck[0];
     const turn = new Turn(guess, topCard);
@@ -24,7 +27,7 @@ class Round {
     return this.percentCorrect;
   }
   endRound() {
-    return `**Round over!** You answered ${this.percentCorrect}% of the questions correctly!`
+    console.log(`**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
   }
 }
 
