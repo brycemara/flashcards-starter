@@ -15,7 +15,7 @@ class Round {
     const turn = new Turn(guess, topCard);
     this.deck.shift();
     if (!turn.evaluateGuess()) {
-      this.incorrectGuesses.push(this.deck[0].id)
+      this.incorrectGuesses.push(topCard.id)
     }
     return turn.giveFeedback();
   }
@@ -24,7 +24,7 @@ class Round {
     return this.percentCorrect;
   }
   endRound() {
-    return `**Round over!** You answered ${this.percentCorrect}% of the questions correctly!`
+    console.log(`**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
   }
 }
 
