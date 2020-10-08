@@ -29,36 +29,30 @@ describe('Turn', function() {
   });
 
   it('should store a guess', function() {
-
     expect(turn1.guess).to.equal('array');
     expect(turn2.guess).to.equal('object');
   });
 
   it('should store a card', function() {
-
     expect(turn1.card).to.equal(card1);
     expect(turn2.card).to.equal(card2);
   });
 
   it('should be able to return the guess', function() {
-
     expect(turn1.returnGuess()).to.equal(turn1.guess);
     expect(turn2.returnGuess()).to.equal(turn2.guess);
   });
 
   it('should be able to return the card', function() {
-
     expect(turn1.returnCard()).to.equal(turn1.card);
   });
 
   it('should be able to evaluate the guess', function() {
-
     expect(turn1.evaluateGuess()).to.equal(false);
     expect(turn3.evaluateGuess()).to.equal(true);
   });
 
   it('should be able to give feedback', function() {
-
     expect(turn1.giveFeedback()).to.equal('incorrect!');
     expect(turn3.giveFeedback()).to.equal('correct!');
   });
