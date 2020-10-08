@@ -55,27 +55,26 @@ describe('Round', function() {
   });
 
   it('should be able to return the current card', function() {
-  expect(round.returnCurrentCard()).to.be.equal(card1);
+    expect(round.returnCurrentCard()).to.be.equal(card1);
   });
 
   it('should be able to take a turn', function() {
-  round.takeTurn(guess1)
+    round.takeTurn(guess1)
 
-  expect(turn).to.be.an.instanceof(Turn);
-  expect(round.turns).to.be.equal(1);
+    expect(turn).to.be.an.instanceof(Turn);
+    expect(round.turns).to.be.equal(1);
   });
 
   it('should take current card from deck when taking a turn', function() {
-  round.takeTurn(guess1);
+    round.takeTurn(guess1);
 
-  expect(round.deck.length).to.be.equal(2);
-  expect(round.returnCurrentCard()).to.be.equal(card2);
+    expect(round.deck.length).to.be.equal(2);
+    expect(round.returnCurrentCard()).to.be.equal(card2);
   });
 
   it('should check answer and give feedback', function() {
-
-  expect(round.takeTurn(guess1)).to.be.equal('incorrect!');
-  expect(round.takeTurn(guess2)).to.be.equal('correct!');
+    expect(round.takeTurn(guess1)).to.be.equal('incorrect!');
+    expect(round.takeTurn(guess2)).to.be.equal('correct!');
   });
 
   it('should be able to calculate percent correct', function() {
