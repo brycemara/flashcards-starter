@@ -28,7 +28,6 @@ describe('Round', function() {
     guess1 = 'array';
     guess2 = 'object';
     turn = new Turn(guess1, round.currentCard)
-
   })
 
   it('should be a function', function() {
@@ -56,34 +55,31 @@ describe('Round', function() {
   });
 
   it('should be able to return the current card', function() {
-  expect(round.returnCurrentCard()).to.be.equal(card1);
+    expect(round.returnCurrentCard()).to.be.equal(card1);
   });
 
   it('should be able to take a turn', function() {
-  round.takeTurn(guess1)
+    round.takeTurn(guess1)
 
-  expect(turn).to.be.an.instanceof(Turn);
-  expect(round.turns).to.be.equal(1);
+    expect(turn).to.be.an.instanceof(Turn);
+    expect(round.turns).to.be.equal(1);
   });
 
   it('should take current card from deck when taking a turn', function() {
-  round.takeTurn(guess1);
+    round.takeTurn(guess1);
 
-  expect(round.deck.length).to.be.equal(2);
-  expect(round.returnCurrentCard()).to.be.equal(card2);
+    expect(round.deck.length).to.be.equal(2);
+    expect(round.returnCurrentCard()).to.be.equal(card2);
   });
 
   it('should check answer and give feedback', function() {
-  let test1 = round.takeTurn(guess1);
-  let test2 = round.takeTurn(guess2);
-
-  expect(test1).to.be.equal('incorrect!');
-  expect(test2).to.be.equal('correct!');
+    expect(round.takeTurn(guess1)).to.be.equal('incorrect!');
+    expect(round.takeTurn(guess2)).to.be.equal('correct!');
   });
 
   it('should be able to calculate percent correct', function() {
-    let test1 = round.takeTurn(guess1);
-    let test2 = round.takeTurn(guess2);
+    round.takeTurn(guess1);
+    round.takeTurn(guess2);
 
     expect(round.calculatePercentCorrect()).to.be.equal(50)
     expect(round.endRound()).to.be.equal(console.log('**Round over!** You answered 50% of the questions correctly!'))
