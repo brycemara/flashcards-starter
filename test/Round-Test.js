@@ -28,7 +28,6 @@ describe('Round', function() {
     guess1 = 'array';
     guess2 = 'object';
     turn = new Turn(guess1, round.currentCard)
-
   })
 
   it('should be a function', function() {
